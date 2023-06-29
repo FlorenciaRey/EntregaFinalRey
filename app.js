@@ -286,23 +286,56 @@ let platos = [
 ]
 const platosStr = JSON.stringify(platos)
 
-const container = document.getElementById(contenedorCards);
-contenedorCards.innerHTML = "";
-platos.forEach((plato, indice)=>{
-    let card = document.createElement("div");
-    card.classList.add("card", "col-sm-12", "col-lg-3", "col-md-4", "col-6", "mb-1", "mt-1");
-    let html = `
-    <img src="${plato.imagen}" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">${plato.nombre}</h5>
-      <p class="card-text">$${plato.precio}</p>
-      <a href="#cart" class="btn btn-danger comprar" onClick="funcionComprar(${indice})">Comprar</a>
-    </div>
-      `;
-  card.innerHTML = html;
-  contenedorCards.appendChild(card);
-  
-})
+
+const platos_congelados = platos.filter(plato => plato.tipo==="congelados")
+console.log(platos_congelados)
+const platos_postres = platos.filter(plato => plato.tipo==="postres")
+console.log(platos_postres)
+const platos_copetin = platos.filter(plato => plato.tipo==="copetin")
+console.log(platos_copetin)
+
+const contenedor_filtros = document.querySelector(".filtros")
+contenedor_filtros.innerHTML=""
+let filtros = document.createElement("div")
+filtros.innerHTML=`
+<button type="button" class="btn" onclick="crearCards(platos)">Todos</button>
+<button type="button" class="btn" onclick="filtrarCongelados()"><i class="fa-regular fa-snowflake"></i> Congelados</button>
+<button type="button" class="btn" onclick="filtrarPostres()"><i class="fa-solid fa-hockey-puck"></i> Postres</button>
+<button type="button" class="btn" onclick="filtrarCopetin()"><i class="fa-solid fa-cheese"></i>  Copetin</button>
+`;
+contenedor_filtros.appendChild(filtros)
+
+function crearCards(array_productos){
+    const container = document.getElementById(contenedorCards);
+    contenedorCards.innerHTML = "";
+    array_productos.forEach((plato, indice)=>{
+        let card = document.createElement("div");
+        card.classList.add("card", "col-sm-12", "col-lg-3", "col-md-4", "col-6", "mb-1", "mt-1");
+        let html = `
+        <img src="${plato.imagen}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${plato.nombre}</h5>
+          <p class="card-text">$${plato.precio}</p>
+          <a href="#cart" class="btn btn-danger comprar" onClick="funcionComprar(${indice})">Comprar</a>
+        </div>
+          `;
+      card.innerHTML = html;
+      contenedorCards.appendChild(card);
+      
+    })
+}
+
+crearCards(platos)
+
+function filtrarCopetin(){
+    crearCards(platos_copetin)
+}
+function filtrarCongelados(){
+    crearCards(platos_congelados)
+}
+function filtrarPostres(){
+    crearCards(platos_postres)
+}
 
 const carrito = []
 carritoTraidoJSON = localStorage.getItem("carritoLS")
@@ -452,90 +485,4 @@ function restarUno(indice){
     const carritoActualizado = JSON.stringify(carrito)
     localStorage.setItem("carritoLS", carritoActualizado) 
     }
-}
-
-
-const divprueba = document.querySelector(".florencia")
-const  crearelemento = document.createElement("div")
-crearelemento.innerHTML = `
-                <p>Filtrar por tipo de producto</p>
-                <div>
-                <button type="button" class="btn btn-secondary">Todos</button>
-                <button type="button" class="btn btn-secondary" onClick="filtrarProductosCongelados()">Congelados</button>
-                <button type="button" class="btn btn-secondary" onClick="filtrarProductosCopetin()">Copetín</button>
-                <button type="button" class="btn btn-secondary"  onClick="filtrarProductosPostres()">Postres</button>
-                </div>
-`
-divprueba.append(crearelemento)
-
-function filtrarProductosCongelados(){
-    console.log("filtrando productos")
-    contenedorCards.innerHTML=""
-    platos.forEach((plato, indice)=>{
-        if(plato.tipo==="congelados"){
-            let card = document.createElement("div");
-        card.classList.add("card", "col-sm-12", "col-lg-3", "col-md-4", "col-6", "mb-1", "mt-1");
-        let html = `
-        <img src="${plato.imagen}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">${plato.nombre}</h5>
-          <p class="card-text">$${plato.precio}</p>
-          <a href="#cart" class="btn btn-danger comprar" onClick="funcionComprar(${indice})">Comprar</a>
-        </div>
-          `;
-      card.innerHTML = html;
-      contenedorCards.appendChild(card);
-
-        }
-        
-      
-    })
-}
-
-function filtrarProductosCopetin(){
-    console.log("filtrando productos")
-    contenedorCards.innerHTML=""
-    platos.forEach((plato, indice)=>{
-        if(plato.tipo==="copetin"){
-            let card = document.createElement("div");
-        card.classList.add("card", "col-sm-12", "col-lg-3", "col-md-4", "col-6", "mb-1", "mt-1");
-        let html = `
-        <img src="${plato.imagen}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">${plato.nombre}</h5>
-          <p class="card-text">$${plato.precio}</p>
-          <a href="#cart" class="btn btn-danger comprar" onClick="funcionComprar(${indice})">Comprar</a>
-        </div>
-          `;
-      card.innerHTML = html;
-      contenedorCards.appendChild(card);
-
-        }
-        
-      
-    })
-}
-
-function filtrarProductosPostres(){
-    console.log("filtrando productos")
-    contenedorCards.innerHTML=""
-    platos.forEach((plato, indice)=>{
-        if(plato.tipo==="postres"){
-            let card = document.createElement("div");
-        card.classList.add("card", "col-sm-12", "col-lg-3", "col-md-4", "col-6", "mb-1", "mt-1");
-        let html = `
-        <img src="${plato.imagen}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">${plato.nombre}</h5>
-          <p class="card-text">$${plato.precio}</p>
-          <a href="#cart" class="btn btn-danger comprar" onClick="funcionComprar(${indice})">Comprar</a>
-        </div>
-          `;
-      card.innerHTML = html;
-      contenedorCards.appendChild(card);
-
-        }
-        
-      
-    })
 }
