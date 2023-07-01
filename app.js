@@ -1,298 +1,304 @@
-let platos = [
-    {
-        id: 1,
-        nombre: "Canelones de carne",
-        precio: 940,
-        imagen: "./images/canelonesdecarne.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 2,
-        nombre: "Canelones de choclo",
-        precio: 940,
-        imagen: "./images/canelonesdejychoclo.jpg",
-        disponible: true,
-        tipo: "congelados"
+let platos = [];
 
-    },
-    {
-        id: 3,
-        nombre: "Cerdo Agridulce",
-        precio: 1080,
-        imagen: "./images/cerdoagridulce.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 4,
-        nombre: "Lasagnas de carne",
-        precio: 1100,
-        imagen: "./images/lasagnacarne.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 5,
-        nombre: "Lasagnas de pollo",
-        precio: 1100,
-        imagen: "./images/lasagnapollo.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 6,
-        nombre: "Lasagnas de vegetales",
-        precio: 1100,
-        imagen: "./images/lasagnavegetales.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 7,
-        nombre: "Pollo a la crema",
-        precio: 1260,
-        imagen: "./images/polloalacrema.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 8,
-        nombre: "Pollo al curry",
-        precio: 1230,
-        imagen: "./images/polloalcurry.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 9,
-        nombre: "Pollo Chino",
-        precio: 1230,
-        imagen: "./images/pollochino.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 10,
-        nombre: "Berenjenas parmesana",
-        precio: 1265,
-        imagen: "./images/berenjenasParmesana.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 11,
-        nombre: "Canelones de verdura",
-        precio: 940,
-        imagen: "./images/canelonesdeverdura.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 12,
-        nombre: "Carbonada criolla",
-        precio: 940,
-        imagen: "./images/carbonadacriolla.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 13,
-        nombre: "Cazuela de mondongo",
-        precio: 1040,
-        imagen: "./images/cazuelamondongo.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 14,
-        nombre: "Chicken pie",
-        precio: 970,
-        imagen: "./images/chickenpie.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 15,
-        nombre: "Rótolos de espinaca",
-        precio: 940,
-        imagen: "./images/rotolos.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 16,
-        nombre: "Feijoada",
-        precio: 940,
-        imagen: "./images/feijoada.jpg",
-        disponible: true,
-        tipo: "congelados"
-    },
-    {
-        id: 17,
-        nombre: "Postre brownie y maracuyá",
-        precio: 1450,
-        imagen: "./images/browniemaracuya.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 18,
-        nombre: "Cheesecake",
-        precio: 1400,
-        imagen: "./images/cheesecake.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 19,
-        nombre: "Corteza de café",
-        precio: 1100,
-        imagen: "./images/cortezadecafe.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 20,
-        nombre: "Cúpula de chocolate",
-        precio: 1250,
-        imagen: "./images/cupuladechocolate.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 21,
-        nombre: "Dip de remolacha",
-        precio: 200,
-        imagen: "./images/dipremolacha.jpg",
-        disponible: true,
-        tipo: "copetin"
-    },
-    {
-        id: 22,
-        nombre: "Dip de zanahoria",
-        precio: 200,
-        imagen: "./images/dipzanahoria.jpg",
-        disponible: true,
-        tipo: "copetin"
-    },
-    {
-        id: 23,
-        nombre: "Hummus",
-        precio: 250,
-        imagen: "./images/hummus.jpg",
-        disponible: true,
-        tipo: "copetin"
-    },
-    {
-        id: 24,
-        nombre: "Lemon tart con merengue",
-        precio: 750,
-        imagen: "./images/lemonconmerengue.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 25,
-        nombre: "Torta manzana y pasas",
-        precio: 600,
-        imagen: "./images/manzanaypasas.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 26,
-        nombre: "Paté de foie",
-        precio: 340,
-        imagen: "./images/parefoie.jpg",
-        disponible: true,
-        tipo: "copetin"
-    },
-    {
-        id: 27,
-        nombre: "Paté de salmón",
-        precio: 490,
-        imagen: "./images/patesalmon.jpg",
-        disponible: true,
-        tipo: "copetin"
-    },
-    {
-        id: 28,
-        nombre: "Quesito de hierbas",
-        precio: 350,
-        imagen: "./images/quesitohierbas.jpg",
-        disponible: true,
-        tipo: "copetin"
-    },
-    {
-        id: 29,
-        nombre: "Quesito de pimienta",
-        precio: 350,
-        imagen: "./images/quesitopimienta.jpg",
-        disponible: true,
-        tipo: "copetin"
-    },
-    {
-        id: 30,
-        nombre: "Quesito de nuez",
-        precio: 350,
-        imagen: "./images/quisitonuez.jpg",
-        disponible: true,
-        tipo: "copetin"
-    },
-    {
-        id: 31,
-        nombre: "Torta rogel",
-        precio: 1090,
-        imagen: "./images/rogel.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 32,
-        nombre: "Tarta de frutas variadas",
-        precio: 990,
-        imagen: "./images/tartafrutasvariadas.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 33,
-        nombre: "Tarta de manzana",
-        precio: 720,
-        imagen: "./images/tartamanzana.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 34,
-        nombre: "Tarta maracuyá y frutillas",
-        precio: 990,
-        imagen: "./images/tartamaracuyayfrutillas.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
-    {
-        id: 35,
-        nombre: "Brownie y dulce de leche",
-        precio: 1190,
-        imagen: "./images/tortabrownie.jpg",
-        disponible: true,
-        tipo: "postres"
-    },
+fetch("./data.json")
+    .then(response => response.json())
+    .then(data=> {platos = data; 
+        crearCards(platos);
+    })
+
+    platos = [
+        {
+            id: 1,
+            nombre: "Canelones de carne",
+            precio: 940,
+            imagen: "./images/canelonesdecarne.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 2,
+            nombre: "Canelones de choclo",
+            precio: 940,
+            imagen: "./images/canelonesdejychoclo.jpg",
+            disponible: true,
+            tipo: "congelados"
     
-
-
-]
+        },
+        {
+            id: 3,
+            nombre: "Cerdo Agridulce",
+            precio: 1080,
+            imagen: "./images/cerdoagridulce.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 4,
+            nombre: "Lasagnas de carne",
+            precio: 1100,
+            imagen: "./images/lasagnacarne.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 5,
+            nombre: "Lasagnas de pollo",
+            precio: 1100,
+            imagen: "./images/lasagnapollo.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 6,
+            nombre: "Lasagnas de vegetales",
+            precio: 1100,
+            imagen: "./images/lasagnavegetales.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 7,
+            nombre: "Pollo a la crema",
+            precio: 1260,
+            imagen: "./images/polloalacrema.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 8,
+            nombre: "Pollo al curry",
+            precio: 1230,
+            imagen: "./images/polloalcurry.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 9,
+            nombre: "Pollo Chino",
+            precio: 1230,
+            imagen: "./images/pollochino.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 10,
+            nombre: "Berenjenas parmesana",
+            precio: 1265,
+            imagen: "./images/berenjenasParmesana.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 11,
+            nombre: "Canelones de verdura",
+            precio: 940,
+            imagen: "./images/canelonesdeverdura.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 12,
+            nombre: "Carbonada criolla",
+            precio: 940,
+            imagen: "./images/carbonadacriolla.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 13,
+            nombre: "Cazuela de mondongo",
+            precio: 1040,
+            imagen: "./images/cazuelamondongo.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 14,
+            nombre: "Chicken pie",
+            precio: 970,
+            imagen: "./images/chickenpie.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 15,
+            nombre: "Rótolos de espinaca",
+            precio: 940,
+            imagen: "./images/rotolos.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 16,
+            nombre: "Feijoada",
+            precio: 940,
+            imagen: "./images/feijoada.jpg",
+            disponible: true,
+            tipo: "congelados"
+        },
+        {
+            id: 17,
+            nombre: "Postre brownie y maracuyá",
+            precio: 1450,
+            imagen: "./images/browniemaracuya.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 18,
+            nombre: "Cheesecake",
+            precio: 1400,
+            imagen: "./images/cheesecake.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 19,
+            nombre: "Corteza de café",
+            precio: 1100,
+            imagen: "./images/cortezadecafe.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 20,
+            nombre: "Cúpula de chocolate",
+            precio: 1250,
+            imagen: "./images/cupuladechocolate.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 21,
+            nombre: "Dip de remolacha",
+            precio: 200,
+            imagen: "./images/dipremolacha.jpg",
+            disponible: true,
+            tipo: "copetin"
+        },
+        {
+            id: 22,
+            nombre: "Dip de zanahoria",
+            precio: 200,
+            imagen: "./images/dipzanahoria.jpg",
+            disponible: true,
+            tipo: "copetin"
+        },
+        {
+            id: 23,
+            nombre: "Hummus",
+            precio: 250,
+            imagen: "./images/hummus.jpg",
+            disponible: true,
+            tipo: "copetin"
+        },
+        {
+            id: 24,
+            nombre: "Lemon tart con merengue",
+            precio: 750,
+            imagen: "./images/lemonconmerengue.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 25,
+            nombre: "Torta manzana y pasas",
+            precio: 600,
+            imagen: "./images/manzanaypasas.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 26,
+            nombre: "Paté de foie",
+            precio: 340,
+            imagen: "./images/parefoie.jpg",
+            disponible: true,
+            tipo: "copetin"
+        },
+        {
+            id: 27,
+            nombre: "Paté de salmón",
+            precio: 490,
+            imagen: "./images/patesalmon.jpg",
+            disponible: true,
+            tipo: "copetin"
+        },
+        {
+            id: 28,
+            nombre: "Quesito de hierbas",
+            precio: 350,
+            imagen: "./images/quesitohierbas.jpg",
+            disponible: true,
+            tipo: "copetin"
+        },
+        {
+            id: 29,
+            nombre: "Quesito de pimienta",
+            precio: 350,
+            imagen: "./images/quesitopimienta.jpg",
+            disponible: true,
+            tipo: "copetin"
+        },
+        {
+            id: 30,
+            nombre: "Quesito de nuez",
+            precio: 350,
+            imagen: "./images/quisitonuez.jpg",
+            disponible: true,
+            tipo: "copetin"
+        },
+        {
+            id: 31,
+            nombre: "Torta rogel",
+            precio: 1090,
+            imagen: "./images/rogel.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 32,
+            nombre: "Tarta de frutas variadas",
+            precio: 990,
+            imagen: "./images/tartafrutasvariadas.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 33,
+            nombre: "Tarta de manzana",
+            precio: 720,
+            imagen: "./images/tartamanzana.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 34,
+            nombre: "Tarta maracuyá y frutillas",
+            precio: 990,
+            imagen: "./images/tartamaracuyayfrutillas.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        {
+            id: 35,
+            nombre: "Brownie y dulce de leche",
+            precio: 1190,
+            imagen: "./images/tortabrownie.jpg",
+            disponible: true,
+            tipo: "postres"
+        },
+        
+    
+    
+    ]  
+    console.log(platos)
 const platosStr = JSON.stringify(platos)
-
-
 const platos_congelados = platos.filter(plato => plato.tipo==="congelados")
-console.log(platos_congelados)
-const platos_postres = platos.filter(plato => plato.tipo==="postres")
-console.log(platos_postres)
 const platos_copetin = platos.filter(plato => plato.tipo==="copetin")
-console.log(platos_copetin)
+const platos_postres = platos.filter(plato=> plato.tipo==="postres")
+
+
 
 const contenedor_filtros = document.querySelector(".filtros")
 contenedor_filtros.innerHTML=""
@@ -324,8 +330,6 @@ function crearCards(array_productos){
       
     })
 }
-
-crearCards(platos)
 
 function filtrarCopetin(){
     crearCards(platos_copetin)
@@ -390,13 +394,13 @@ function crearCarrito(){
     contenedorTotal.appendChild(botonFinalizar)
 
 }
-
 crearCarrito()
 
 
 
 function agregarAlCarrito(indice){
     const productoClickeado = platos[indice]
+
     const flor = carrito.findIndex((elemento)=>{
         return elemento.id === platos[indice].id
     } )
@@ -461,6 +465,8 @@ function finalizarCompra(){
         crearCarrito()
 
 }
+
+
 
 
 function sumarUno(indice){
